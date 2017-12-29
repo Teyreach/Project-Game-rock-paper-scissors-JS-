@@ -54,9 +54,11 @@ function newGame() {
         player.score = computer.score = 0;
         gameState = 'started';
         setGameElements();
+		
 
         playerNameElem.innerHTML = player.name;
-        setGamePoints();
+		setGamePoints();
+        
     }
 
 }
@@ -99,10 +101,23 @@ function checkRoundWinner(playerPick, computerPick) {
     if (winnerIs == 'player') {
         playerResultElem.innerHTML = "Win!";
         player.score++;
+		setGamePoints();
     } else if (winnerIs == 'computer') {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
+		setGamePoints();
+		
     }
+	if (player.score == 10) {
+		alert('You won!');
+		gameState = 'ended';
+		setGameElements();
+	}
+	if (computer.score == 10) {
+		alert('You lost!');
+		gameState = 'ended';
+		setGameElements();
+	}
 
 }
 
@@ -113,6 +128,7 @@ function playerPick(playerPick) {
     computerPickElem.innerHTML = computerPick;
 
     checkRoundWinner(playerPick, computerPick);
+	
 }
 
 function setGamePoints() {
@@ -120,4 +136,4 @@ function setGamePoints() {
     computerPointsElem.innerHTML = computer.score;
 	
 }
- console.log(setGamePoints);
+ 
