@@ -1,2 +1,2 @@
-# zadanie9_7
- https://teyreach.github.io/zadanie9_7/
+# Project-Game-rock-paper-scissors-JS-
+https://teyreach.github.io/Project-Game-rock-paper-scissors-JS-/
